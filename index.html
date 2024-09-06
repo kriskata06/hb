@@ -24,71 +24,68 @@
             align-items: center;
             height: 100vh;
             padding: 10px;
+            text-align: center;
         }
 
         h1 {
             margin-bottom: 20px;
-            font-size: 4vw;
-            text-align: center;
+            font-size: 5vw;
         }
 
         #yesbtn {
             background-color: #38d840;
-            padding: 12px;
-            width: 100px;
+            padding: 15px;
             color: #ffffff;
             text-align: center;
             border: 2px double #cccccc;
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 4vw;
             cursor: pointer;
             margin: 5px;
-            transition: all 0.5s;
-            position: fixed;
+            transition: background-color 0.5s;
         }
 
         #yesbtn:hover {
             background-color: rgb(0, 178, 190);
-            position: absolute;
         }
 
         #wish {
             margin-top: 20px;
-            font-size: 2.5vw;
+            font-size: 4vw;
             font-weight: bold;
             color: red;
-            text-align: center;
         }
 
+        /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             h1 {
-                font-size: 6vw;
-            }
-
-            #wish {
-                font-size: 4vw;
+                font-size: 7vw;
             }
 
             #yesbtn {
-                width: 80px;
+                width: 50%;
+                font-size: 5vw;
                 padding: 10px;
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 7vw;
             }
 
             #wish {
                 font-size: 5vw;
             }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 8vw;
+            }
 
             #yesbtn {
-                width: 70px;
+                width: 60%;
+                font-size: 6vw;
                 padding: 8px;
-                font-size: 14px;
+            }
+
+            #wish {
+                font-size: 6vw;
             }
         }
     </style>
@@ -96,8 +93,8 @@
 
 <body>
     <div id="divcont">
-        <h1></h1><br>
-        <button id="yesbtn" onclick="createLabels()">?</button><br>
+        <h1>???</h1>
+        <button id="yesbtn" onclick="createLabels()">Press Me!</button>
         <p id="wish"></p> <!-- Пожеланието ще се покаже тук -->
     </div>
 
