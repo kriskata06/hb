@@ -93,9 +93,9 @@
 
 <body>
     <div id="divcont">
-        <h1>???</h1>
+        <h1></h1>
         <button id="yesbtn" onclick="createLabels()">Press Me!</button>
-        <p id="wish"></p> <!-- Пожеланието ще се покаже тук -->
+        <p id="wish"></p> 
     </div>
 
     <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -123,8 +123,8 @@
         function createLabels() {
             document.querySelector('h1').innerHTML = "HAPPY BIRTHDAY GIOVANNI 🥳🥳🥳";
             
-            // Добавяне на пожеланието
-            document.getElementById('wish').innerHTML = "Нека всички твои мечти се сбъднат и да имаш най-невероятния ден!";
+          
+            document.getElementById('wish').innerHTML = "Честит рожден ден шефе, пожелавам ти да бъдеш ревностен за Бога, да го следваш постоянно и да не се откланяш, и един ден заедно да бъдем всички в небето!";
             
             for (var i = 0; i < 100; i++) {
                 createLabel();
