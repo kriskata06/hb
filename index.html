@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>?</title>
+    <title>Birthday</title>
     <style>
         * {
             box-sizing: border-box;
@@ -13,10 +13,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-
-        #yesbtn {
-            margin-top: -200px;
+            overflow: hidden;
         }
 
         #divcont {
@@ -26,16 +23,19 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            padding: 10px;
         }
 
         h1 {
-            margin-bottom: 500px;
+            margin-bottom: 20px;
+            font-size: 4vw;
+            text-align: center;
         }
 
-        button {
+        #yesbtn {
             background-color: #38d840;
             padding: 12px;
-            width: 70px;
+            width: 100px;
             color: #ffffff;
             text-align: center;
             border: 2px double #cccccc;
@@ -47,16 +47,49 @@
             position: fixed;
         }
 
-        button:hover {
+        #yesbtn:hover {
             background-color: rgb(0, 178, 190);
             position: absolute;
         }
 
         #wish {
             margin-top: 20px;
-            font-size: 24px;
+            font-size: 2.5vw;
             font-weight: bold;
             color: red;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 6vw;
+            }
+
+            #wish {
+                font-size: 4vw;
+            }
+
+            #yesbtn {
+                width: 80px;
+                padding: 10px;
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 7vw;
+            }
+
+            #wish {
+                font-size: 5vw;
+            }
+
+            #yesbtn {
+                width: 70px;
+                padding: 8px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -65,7 +98,7 @@
     <div id="divcont">
         <h1>???</h1><br>
         <button id="yesbtn" onclick="createLabels()">?</button><br>
-        <p id="wish"></p> <!-- Елементът, където ще се покаже пожеланието -->
+        <p id="wish"></p> <!-- Пожеланието ще се покаже тук -->
     </div>
 
     <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -91,9 +124,9 @@
         }
 
         function createLabels() {
-            document.querySelector('h1').innerHTML = "HAPPY BIRTHDAY GIOVANNI";
+            document.querySelector('h1').innerHTML = "HAPPY BIRTHDAY GIOVANNI 🥳🥳🥳";
             
-            // Добави пожеланието в елемента с id="wish"
+            // Добавяне на пожеланието
             document.getElementById('wish').innerHTML = "Нека всички твои мечти се сбъднат и да имаш най-невероятния ден!";
             
             for (var i = 0; i < 100; i++) {
