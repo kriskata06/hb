@@ -56,6 +56,18 @@
             color: red;
         }
 
+        #counter {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 2vw;
+            color: black;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
         /* Media Queries for smaller screens */
         @media (max-width: 768px) {
             h1 {
@@ -70,6 +82,10 @@
 
             #wish {
                 font-size: 5vw;
+            }
+
+            #counter {
+                font-size: 4vw;
             }
         }
 
@@ -87,6 +103,10 @@
             #wish {
                 font-size: 6vw;
             }
+
+            #counter {
+                font-size: 5vw;
+            }
         }
     </style>
 </head>
@@ -98,8 +118,16 @@
         <p id="wish"></p> 
     </div>
 
+    <div id="counter">Emojis: 0</div>
+
     <script defer src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script defer>
+        let emojiCount = 0;
+
+        function updateCounter() {
+            document.getElementById('counter').innerText = `Emojis: ${emojiCount}`;
+        }
+
         function createLabel() {
             var label = document.createElement("label");
             label.innerText = "🥳";
@@ -116,14 +144,18 @@
                 if (label.offsetTop > window.innerHeight) {
                     document.body.removeChild(label);
                     clearInterval(animationInterval);
+                    emojiCount--;
+                    updateCounter();
                 }
             }, 20);
+
+            emojiCount++;
+            updateCounter();
         }
 
         function createLabels() {
             document.querySelector('h1').innerHTML = "HAPPY BIRTHDAY GIOVANNI 🥳🥳🥳";
             
-          
             document.getElementById('wish').innerHTML = "Честит рожден ден Джо, пожелавам ти да бъдеш ревностен за Бога, да го следваш постоянно и да не се откланяш, и един ден заедно да бъдем всички в небето!";
             
             for (var i = 0; i < 100; i++) {
